@@ -47,6 +47,7 @@ class Router
             'panier' => [DefaultController::class, 'panier', ['user', 'admin']],
             'addpanier' => [DefaultController::class, 'addpanier', ['admin']],
             'updatePanier' => [DefaultController::class, 'updatePanier', ['admin']],
+            'deletePanier' => [DefaultController::class, 'deletePanier', ['admin']],
 
             '404' => [DefaultController::class, 'error404', []],
             '403' => [DefaultController::class, 'error403', []],
