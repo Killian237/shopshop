@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    {{ parent() }}
+    Liste des produits
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <h1 class="text-center text-dark">Liste des {{ type.label }}</h1>
+                <div class="table-responsive">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        {% for produit in produits %}
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="images/{{product.image}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ produit.name }}</h5>
+                                        <p class="card-text">{{ produit.description }}</p>
+                                    </div>
+                                    <a href="index.php?page=avis"> Lire les avis</a>
+                                    <div class="card-footer">
+                                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                    </div>
+                                    <a href="index.php?page=addAvis"><button>Donnez votre avis sur ce produit</button></a>
+                                    <a href="index.php?page=panier"><button>Ajouter au panier</button></a>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %} 
